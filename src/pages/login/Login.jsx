@@ -1,10 +1,13 @@
-import React  from 'react';
+import React from 'react';
 import AuthCard from '../../components/cards/authcard/AuthCard';
+import authbg from '../../assets/images/authbg.png'
 
-function Login () {
+const Login = () => {
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="bg-cover min-h-screen min-w-screen flex items-center" style={{
+      backgroundImage: `url(${authbg})`
+    }}>
       <AuthCard isRegister={false} />
     </div>
   );

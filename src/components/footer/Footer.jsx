@@ -32,7 +32,7 @@ const Footer = () =>
                         <a href="#" className="hover:underline">Daftar Peralatan</a>
                         </li>
                         <li className="mb-4">
-                        <a href="#" className="hover:underline">pemesanan</a>
+                        <a href="#" className="hover:underline">Pemesanan</a>
                         </li>
                         <li>
                         <a href="#" className="hover:underline">Forum Diskusi</a>
