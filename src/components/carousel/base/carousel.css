@@ -1,0 +1,26 @@
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    max-width: 100%;
+  }
+  
+  .carousel {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .carousel-item {
+    flex: 0 0 33.3333%;
+    padding: 0.5rem;
+  }
+  
+  .carousel-item img {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .carousel-item:hover img {
+    transform: translateY(-10px);
+  }
