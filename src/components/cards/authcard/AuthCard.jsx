@@ -8,11 +8,11 @@ const AuthCard = ({ isRegister }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-white shadow-md rounded-2xl grid grid-cols-2 w-1/2 mx-auto">
-      <div className="-p-6">
+    <div className="bg-white shadow-md rounded-2xl md:grid grid-cols-2 w-1/2 mx-auto">
+      <div className="-p-6 hidden lg:block">
         <img src={authleft} alt="auth banner" className="w-72 rounded-tl-2xl rounded-bl-2xl" />
       </div>
-      <div className="-ml-12 py-4 pr-6">
+      <div className="lg:-ml-12 p-6">
       <div className='flex justify-between mb-6'>
       <button
           onClick={() => navigate('/')}
