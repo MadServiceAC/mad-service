@@ -1,7 +1,10 @@
 import React from 'react'
 import Heros from '../../assets/images/heros.png'
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
+  const navigate = useNavigate()
+
   return (
     <div className="h-screen pt-10" style={{ backgroundImage: `url(${Heros})` }}>
           <div className="container mx-auto pt-40 text-white">
@@ -15,8 +18,8 @@ const Hero = () => {
               <p className="mb-10 font-medium text-lg">
               Jika ya, maka Anda membutuhkan jasa servis AC terpercaya.</p>
             <div className="flex space-x-4">
-                <button className="bg-yellow-500 text-black px-12 py-3 rounded-lg font-bold">Login</button>
-                <button className="bg-white text-black px-12 py-3 rounded-lg font-bold">Sign Up</button>
+                <button onClick={() => navigate('/login')} className="bg-yellow-500 text-black px-12 py-3 rounded-lg font-bold">Login</button>
+                <button onClick={() => navigate('/register')} className="bg-white text-black px-12 py-3 rounded-lg font-bold">Sign Up</button>
             </div>
               </div>
             </div>

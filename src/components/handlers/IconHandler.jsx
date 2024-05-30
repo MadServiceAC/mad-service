@@ -7,7 +7,7 @@ import psac from '../../assets/icons/psac.png';
 import rpac from '../../assets/icons/rpac.png';
 import rpbs from '../../assets/icons/rpbs.png';
 
-const images = {
+const icons = {
     ccac,
     ckac,
     clock,
@@ -18,4 +18,4 @@ const images = {
     rpbs
 };
 
-export default images;
+export default icons;
