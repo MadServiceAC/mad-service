@@ -9,7 +9,7 @@ const Navbar = ({ahref, lists}) => {
       <div className="flex space-x-6">
         <a href="#home" className="text-black font-bold hover:text-blue-500">HOME</a>
         <a href="#about" className="text-black font-bold hover:text-blue-500">ABOUT</a>
-        <a href="#service" className="text-black font-bold hover:text-blue-500">SERVICE</a>
+        <Link to={'/service'} className="text-black font-bold hover:text-blue-500">SERVICE</Link>
         <a href="#shop" className="text-black font-bold hover:text-blue-500">SHOP</a>
         <a href="#contact" className="text-black font-bold hover:text-blue-500">CONTACT</a>
       </div>
