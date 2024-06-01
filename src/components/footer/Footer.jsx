@@ -8,7 +8,7 @@ const Footer = () =>
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div className="md:flex md:justify-between">
                     <div className="mb-12 md:mb-0">
-                        <a href="#" className="flex items-center">
+                        <a href="/" className="flex items-center">
                         <img src={logo} className="h-16 me-3" alt="Mad Service Logo" />
                         </a>
                         <p className="font-medium ms-2 mt-2">MadService melayani anda kapanpun</p>

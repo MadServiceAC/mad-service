@@ -1,7 +1,8 @@
 import React from 'react'
 import logo from '../../assets/images/logo.png'
-import { Link } from 'react-router-dom';
-const Navbar = ({ahref, lists}) => {
+import { Link } from 'react-router-dom'
+
+const Navbar = () => {
   return (
     <nav className="bg-gray-100 flex justify-between w-full fixed items-center py-4 px-8 rounded-b-2xl shadow-md z-10">
       <a className="flex items-center">
