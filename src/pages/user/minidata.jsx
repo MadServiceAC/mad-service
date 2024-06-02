@@ -1,4 +1,8 @@
 import imageSrc from '../../assets/images/prwac.png'
+import x from '../../assets/images/teknisi1.png'
+import { icons } from '../../components'
+
+// disini array review
 let reviews = [
     {
       name: "test1",
@@ -7,32 +11,18 @@ let reviews = [
       content: "Teknisi MadService ramah dan profesional. Pasang AC saya dengan cepat dan rapi."
     },
   ]
+
+  // disini array card teknisi
   const cards = [
     {
-      imgSrc: "image1.jpg",
+      imageSrc: x,
       rating: "4.5",
-      reviewersCount: "100",
-      name: "Card 1",
+      reviewers: "102",
+      name: "Luthfi Ilmukti",
     },
-    {
-      imgSrc: "image2.jpg",
-      rating: "4.7",
-      reviewersCount: "150",
-      name: "Card 2",
-    },
-    {
-      imgSrc: "image3.jpg",
-      rating: "4.9",
-      reviewersCount: "200",
-      name: "Card 3",
-    },
-    {
-      imgSrc: "image4.jpg",
-      rating: "1.0",
-      reviewersCount: "250",
-      name: "Card 4",
-    },
-  ];
+  ]
+
+// disini card layanan
   const serviceData = {
     title: 'PERAWATAN AC',
     imageSrc: imageSrc,
@@ -46,5 +36,12 @@ let reviews = [
       { name: 'Pengecekan AC 0,5 - 2 PK', price: 'Rp 65.000' },
     ]
   };
-
-  export default {reviews, cards, serviceData}
+  const item = [
+    { imageSrc: icons.ccac, title: "Cuci AC", description: "Membersihkan filter, evaporator, dan kondensor AC secara menyeluruh." },
+    { imageSrc: icons.psac, title: "Pasang AC", description: "Memasang AC baru dengan tepat dan aman." },
+    { imageSrc: icons.rpac, title: "Perbaikan AC", description: "Mendiagnosis kerusakan AC secara akurat." },
+    { imageSrc: icons.ckac, title: "Pengecekan", description: "Memeriksa kondisi AC secara menyeluruh." },
+    { imageSrc: icons.isfr, title: "Isi Freon", description: "Menambahkan freon ke dalam AC sesuai dengan kebutuhan." },
+    { imageSrc: icons.rpbs, title: "Service Besar", description: "Melakukan kombinasi dari beberapa layanan servis." },
+  ];
+  export default {reviews, cards, serviceData, item}

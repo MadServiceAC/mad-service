@@ -1,10 +1,9 @@
 import React from "react";
-import imagebg from '../../../assets/images/banner-service.png'
 
-function Heros({ title, subtitle}) {
+function Heros({ title, subtitle, imagebg, className}) {
   return (
 <section
-  className="py-16 text-white relative bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${imagebg})` }}
+className={`lg:max-h-screen py-16 text-white relative bg-cover bg-center bg-no-repeat ${className}`} style={{ backgroundImage: `url(${imagebg})` }}
 >
   <div
     className="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"
@@ -18,7 +17,7 @@ function Heros({ title, subtitle}) {
         {title}
       </h1>
 
-      <p className="ml-2 mt-2 max-w-lg sm:text-xl/relaxed text-gray-900">
+      <p className="ms-1.5 mt-2 max-w-lg sm:text-xl/relaxed text-white">
         {subtitle}
       </p>
     </div>

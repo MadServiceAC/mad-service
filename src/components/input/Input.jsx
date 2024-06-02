@@ -6,14 +6,14 @@ const Input = ({ type, styleType, options, placeholder, ...props }) => {
 
   switch (styleType) {
     case 'default':
-      inputElement = <input type={type} className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600" {...props} />;
+      inputElement = <input type={type} className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder={placeholder} {...props} />;
       break;
     case 'paragraph':
-      inputElement = <textarea className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-600" {...props} />;
+      inputElement = <textarea className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder={placeholder} {...props} />;
       break;
     case 'dropdown':
       inputElement = (
-        <select className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600" {...props}>
+        <select className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder={placeholder} {...props}>
           {options && options.map((option, index) => (
             <option key={index} value={option.value}>{option.label}</option>
           ))}
@@ -21,7 +21,7 @@ const Input = ({ type, styleType, options, placeholder, ...props }) => {
       );
       break;
     case 'datepicker':
-      inputElement = <input type="date" className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600" {...props} />;
+      inputElement = <input type="date" className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder={placeholder} {...props} />;
       break;
     case 'floating-label':
       inputElement = (
@@ -33,8 +33,13 @@ const Input = ({ type, styleType, options, placeholder, ...props }) => {
         </div>
       );
       break;
+      case 'phonenumber':
+        inputElement = (
+          <input type='text' className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder={placeholder} />
+        )
+        break
     default:
-      inputElement = <input type={type} className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600" {...props} />;
+      inputElement = <input type={type} className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder={placeholder} {...props} />;
   }
 
   return (

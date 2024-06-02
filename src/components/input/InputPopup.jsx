@@ -12,9 +12,9 @@ const InputTextWithPopup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    data.reviews.push({ ...review, time: "just now" });
+    data.reviews.push({ ...review, time: "just now", name: "ne wu ser" });
     setIsOpen(false);
-    setReview({ name: "", rating: "", content: "" });
+    setReview({ rating: "", content: "" });
   };
 
   return (

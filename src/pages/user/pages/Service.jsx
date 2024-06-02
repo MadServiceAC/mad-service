@@ -3,27 +3,23 @@ import dataglobal from '../../dataglobal'
 import minidata from '../minidata'
 import Navbar from '../components/Navbar'
 import Heros from '../components/Heros'
-import SideBar from "../components/SideBar";
-import Search from "../../../components/input/Search";
-import SvcCard from "../../../components/cards/svc-card/SvcCard";
-import TcardContainer from "../components/TcardContainer";
+import SideBar from "../components/SideBar"
+import Search from "../../../components/input/Search"
+import SvcCard from "../../../components/cards/svc-card/SvcCard"
+import TcardContainer from "../components/TcardContainer"
 import techcnicbg from '../../../assets/images/technicbg.png'
-import UlasanContainer from "../components/UlasanContainer";
+import UlasanContainer from "../components/UlasanContainer"
 import Footer from '../../../components/footer/Footer'
 import InputTextWithPopup from "../../../components/input/InputPopup"
+import imagebg from '../../../assets/images/banner-service.png'
 
 export default Service
 
 function Service() {
-  const [reviews, setReviews] = useState(minidata.reviews);
-
-  const addReview = (newReview) => {
-    setReviews([...reviews, newReview]);
-  };
     return(
         <>
         <Navbar links={dataglobal.links}/>
-        <Heros title='Our Services' subtitle='Hubungi Kami | Pesan layanan'/>
+        <Heros title='Our Services' subtitle='Hubungi Kami | Pesan layanan' imagebg={imagebg}/>
         <div className="container mx-auto flex">
             <SideBar/>
             <div className="flex-1 p-8">
@@ -47,8 +43,9 @@ function Service() {
               </h3>
             </div>
         </div>
-        <div className="mt-8 bg-auto" style={{ backgroundImage: `url(${techcnicbg})` }}>         
-            <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <div className="mt-8 bg-auto" style={{ backgroundImage: `url(${techcnicbg})` }}>
+        <h2 className="font-bold text-xl text-white px-4 lg:px-32 pt-16">Teknisi Service AC Profesional & Berpengalaman</h2>
+            <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:pb-16">
                 <TcardContainer cards={minidata.cards}/>
             </div>
         </div>
