@@ -44,4 +44,41 @@ let reviews = [
     { imageSrc: icons.isfr, title: "Isi Freon", description: "Menambahkan freon ke dalam AC sesuai dengan kebutuhan." },
     { imageSrc: icons.rpbs, title: "Service Besar", description: "Melakukan kombinasi dari beberapa layanan servis." },
   ];
-  export default {reviews, cards, serviceData, item}
+  const articles = [
+    {
+      title: "Panduan Merawat AC di Rumah",
+      author: "John Doe",
+      tanggalArtikel: "Minggu, 02 Juni 2024",
+      imageSrc: "https://example.com/image1.jpg",
+      isiArtikel: "Merawat AC secara teratur sangat penting untuk memastikan kinerjanya tetap optimal. Berikut adalah beberapa tips merawat AC di rumah..."
+    },
+    {
+      title: "Tips Memilih AC yang Tepat untuk Rumah Anda",
+      author: "Jane Smith",
+      tanggalArtikel: "Sabtu, 25 Mei 2024",
+      imageSrc: "https://example.com/image2.jpg",
+      isiArtikel: "Memilih AC yang tepat dapat meningkatkan kenyamanan di rumah Anda. Pertimbangkan ukuran ruangan, konsumsi energi, dan fitur-fitur tambahan saat memilih AC..."
+    },
+    {
+      title: "Perbedaan AC Inverter dan Non-Inverter",
+      author: "Alex Johnson",
+      tanggalArtikel: "Rabu, 15 Mei 2024",
+      imageSrc: "https://example.com/image3.jpg",
+      isiArtikel: "AC Inverter dan Non-Inverter memiliki perbedaan yang signifikan dalam cara kerjanya. AC Inverter lebih hemat energi karena dapat menyesuaikan kecepatan kompresor dengan kebutuhan pendinginan..."
+    },
+    {
+      title: "Cara Efektif Membersihkan Filter AC",
+      author: "Emily Davis",
+      tanggalArtikel: "Jumat, 10 Mei 2024",
+      imageSrc: "https://example.com/image4.jpg",
+      isiArtikel: "Membersihkan filter AC secara rutin dapat meningkatkan kualitas udara dan efisiensi AC. Berikut adalah langkah-langkah mudah untuk membersihkan filter AC..."
+    },
+    {
+      title: "Tanda-Tanda AC Perlu Diservis",
+      author: "Michael Brown",
+      tanggalArtikel: "Selasa, 30 April 2024",
+      imageSrc: "https://example.com/image5.jpg",
+      isiArtikel: "AC yang tidak berfungsi dengan baik dapat menunjukkan beberapa tanda seperti suara aneh, pendinginan tidak merata, dan peningkatan tagihan listrik. Ketahui tanda-tanda lainnya di artikel ini..."
+    }
+  ];
+  export default {reviews, cards, serviceData, item, articles}
