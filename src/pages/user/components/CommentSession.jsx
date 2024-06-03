@@ -4,7 +4,7 @@ import minidata from '../minidata'
 
 const CommentSection = () => {
   return (
-    <section className="my-16">
+    <section className="lg:my-16">
       <div className="max-w-screen-xl mx-auto">
         {minidata.comments.map((comment, index) => (
           <CommentCard

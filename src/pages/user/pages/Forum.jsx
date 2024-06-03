@@ -14,7 +14,7 @@ function Forum() {
         <Heros title="Forum" subtitle="Bergabung Sekarang | Ajukan Pertanyaan" imagebg={imagebg} className="text-white" />
         <section className="my-16">
             <div className="max-w-screen-xl mx-auto">
-                <div className="font-semibold border-s-4 border-blue-500 p-4 bg-sky-200 text-md text-gray-900 my-4">
+                <div className="font-semibold border-s-4 border-blue-500 p-4 bg-sky-200 text-md text-gray-900 lg:my-4">
                       <h3 className="ps-6">Forum Diskusi</h3>
                 </div>
                 <CommentSection />

@@ -23,11 +23,11 @@ function Service() {
         <div className="container mx-auto flex">
             <SideBar/>
             <div className="flex-1 p-8">
-                <div className="flex flex-col mb-8 space-y-4">
+                <div className="flex flex-col mb-4 space-y-4">
                         <div className="flex justify-end">
                             <Search/>
                         </div>
-                        <h1 className="text-3xl font-semibold">Service AC Handal & Terpercaya untuk Kenyamanan Anda</h1>
+                        <h1 className="text-xl font-semibold">Service AC Handal & Terpercaya untuk Kenyamanan Anda</h1>
                 </div>
                 <SvcCard
                     title={minidata.serviceData.title}
