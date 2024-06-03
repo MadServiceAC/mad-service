@@ -10,10 +10,10 @@ const Navbar = () => {
       </a>
       <div className="flex space-x-6">
         <a href="/" className="text-black font-bold hover:text-blue-500">HOME</a>
-        <a href="/about" className="text-black font-bold hover:text-blue-500">ABOUT</a>
+        <Link to={'/about'} className="text-black font-bold hover:text-blue-500">ABOUT</Link>
         <Link to={'/service'} className="text-black font-bold hover:text-blue-500">SERVICE</Link>
-        <a href="/shop" className="text-black font-bold hover:text-blue-500">SHOP</a>
-        <a href="/contact" className="text-black font-bold hover:text-blue-500">CONTACT</a>
+        <Link to={'/shop'} className="text-black font-bold hover:text-blue-500">SHOP</Link>
+        <Link to={'/contact'} className="text-black font-bold hover:text-blue-500">CONTACT</Link>
       </div>
     </nav>
   );
