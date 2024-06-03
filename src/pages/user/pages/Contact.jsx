@@ -88,7 +88,7 @@ function Contact() {
                     </div>
 
                     <div className="col-span-6">
-                        <button className="text-sm font-medium bg-yellow-400 hover:bg-yellow-600 w-full py-2 rounded-md shadow-md">Send Message</button>
+                        <button className="text-sm font-medium bg-button hover:bg-yellow-500 w-full py-2 rounded-md shadow-md">Send Message</button>
                     </div>
                     </form>
                 </div>

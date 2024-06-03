@@ -71,7 +71,7 @@ function Home() {
             <Input styleType="default" placeholder="Naame" />
             <Input type='email' styleType="default" placeholder="Email" />
             <Input styleType="paragraph" placeholder="Message" rows="5" />
-            <button className="bg-yellow-500 hover:bg-yellow-700 text-gray-900 p-3 px-6 w-fit rounded-lg shadow-md font-medium">Send Message</button>
+            <button className="bg-button hover:bg-yellow-500 text-gray-900 p-3 px-6 w-fit rounded-lg shadow-md font-medium">Send Message</button>
             </div>
         </div>
         <div className='hidden lg:flex px-8 py-4'>

@@ -18,7 +18,7 @@ const Hero = () => {
               <p className="mb-10 font-medium text-lg">
               Jika ya, maka Anda membutuhkan jasa servis AC terpercaya.</p>
             <div className="flex space-x-4">
-                <button onClick={() => navigate('/login')} className="bg-yellow-500 text-black px-12 py-3 rounded-lg font-bold">Login</button>
+                <button onClick={() => navigate('/login')} className="bg-button hover:bg-yellow-500 text-black px-12 py-3 rounded-lg font-bold">Login</button>
                 <button onClick={() => navigate('/register')} className="bg-white text-black px-12 py-3 rounded-lg font-bold">Sign Up</button>
             </div>
               </div>

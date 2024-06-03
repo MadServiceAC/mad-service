@@ -108,4 +108,31 @@ let reviews = [
       replies: [],
     },
   ]
-  export default {reviews, cards, serviceData, item, articles, comments}
+  const productInfo = {
+    sku: "FTC15NV14",
+    type: "AC Standard",
+    color: "Putih",
+    wattage: 389,
+    dimensions: "28 x 77 x 22 cm",
+    weight: 9,
+    warranty: "1 Tahun Sparepart, 3 Tahun Kompresor",
+    pk: "1/2 PK",
+    coolingCapacity: "5000 BTU/h",
+    refrigerantType: "R-32",
+    pipeSize: "ø1/4 ø3/8",
+    outdoorDimensions: "42 x 70 x 24 cm",
+    outdoorWeight: 20,
+    origin: "Thailand",
+    fridgeCapacity: "203 Liter",
+    fridgeRefrigerant: "R-600A",
+    features: [
+      "5000 Btu/hr - Bisa mendinginkan ruangan sampai 10m2.",
+      "Garansi 1 Tahun Sparepart, 3 Tahun Kompresor.",
+      "Mulai Ulang Otomatis - AC akan mengingat pengaturan mode operasi, dan secara otomatis kembali ke pengaturan tersebut ketika listrik kembali menyala.",
+      "Perlakuan Anti-Korosi Outdoor Unit - Sirip penukar panas unit luar diproses menggunakan perawatan anti korosi khusus.",
+      "R32 - Refrigeran ramah lingkungan dengan nol ODP (Ozone Depletion Potential) dan lebih cepat dingin.",
+      "Powerful Mode - untuk meningkatkan pendinginan kinerja dalam waktu 20 menit baik ketika AC pertama kali diaktifkan atau perlu untuk mengubah suhu kamar dengan cepat.",
+      "Diagnosis Mandiri - Jika terjadi kerusakan akan ditampilkan pada panel tampilan digital remote untuk perawatan cepat dan mudah."
+    ]
+  }
+  export default {reviews, cards, serviceData, item, articles, comments, productInfo}

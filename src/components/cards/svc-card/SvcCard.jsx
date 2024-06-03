@@ -16,7 +16,7 @@ const SvcCard = ({ imageSrc, title, services }) => {
           ))}
         </ul>
         <div className='flex justify-end'>
-        <button className="mt-6 bg-button text-gray-900 font-medium px-8 py-2 rounded-lg flex items-center shadow-lg">
+        <button className="mt-6 bg-button hover:bg-yellow-500 text-gray-900 font-medium px-8 py-2 rounded-lg flex items-center shadow-lg">
           Pesan sekarang
           <span className="ml-2">&rarr;</span>
         </button>
