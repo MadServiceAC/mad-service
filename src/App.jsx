@@ -7,6 +7,7 @@ import Shop from "./pages/user/pages/Shop"
 import Forum from "./pages/user/pages/Forum"
 import Blog from "./pages/user/pages/Blog"
 import Contact from "./pages/user/pages/Contact"
+import NotFound from "./pages/notfound"
 
 function App() {
    return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/forum" element={<Forum/>}/>
           <Route path="/blog" element={<Blog/>}/>
           <Route path="/contact" element={<Contact/>}/>
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
    );
