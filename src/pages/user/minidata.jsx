@@ -35,7 +35,7 @@ let reviews = [
       { name: 'Vacuum AC', price: 'Rp 150.000' },
       { name: 'Pengecekan AC 0,5 - 2 PK', price: 'Rp 65.000' },
     ]
-  };
+  }
   const item = [
     { imageSrc: icons.ccac, title: "Cuci AC", description: "Membersihkan filter, evaporator, dan kondensor AC secara menyeluruh." },
     { imageSrc: icons.psac, title: "Pasang AC", description: "Memasang AC baru dengan tepat dan aman." },
@@ -43,7 +43,7 @@ let reviews = [
     { imageSrc: icons.ckac, title: "Pengecekan", description: "Memeriksa kondisi AC secara menyeluruh." },
     { imageSrc: icons.isfr, title: "Isi Freon", description: "Menambahkan freon ke dalam AC sesuai dengan kebutuhan." },
     { imageSrc: icons.rpbs, title: "Service Besar", description: "Melakukan kombinasi dari beberapa layanan servis." },
-  ];
+  ]
   const articles = [
     {
       title: "Panduan Merawat AC di Rumah",
@@ -80,5 +80,32 @@ let reviews = [
       imageSrc: "https://example.com/image5.jpg",
       isiArtikel: "AC yang tidak berfungsi dengan baik dapat menunjukkan beberapa tanda seperti suara aneh, pendinginan tidak merata, dan peningkatan tagihan listrik. Ketahui tanda-tanda lainnya di artikel ini..."
     }
-  ];
-  export default {reviews, cards, serviceData, item, articles}
+  ]
+  const comments = [
+    {
+      user: 'Monika Amalia',
+      date: '20 April 2024',
+      comment:
+        'Madservice adalah pilihan terbaik untuk servis AC di wilayah ini. Saya telah menggunakan layanan mereka beberapa kali dan belum pernah kecewa. Mereka selalu tepat waktu dan harga yang mereka tawarkan sangat wajar untuk kualitas layanan yang mereka berikan. Teknisi mereka juga sangat berpengalaman dan ramah. Saya sangat senang dengan hasilnya setiap kali mereka melakukan perbaikan AC saya.',
+      likes: 7,
+      replies: [
+        {
+          user: 'Hansen Vendi',
+          date: '26 April 2024',
+          comment:
+            'Saya juga ingin berbagi pengalaman saya dengan MadService. Baru-baru ini, AC di kantor saya mengalami masalah & kami memutuskan untuk menggunakan jasa mereka. Pelayanan pelanggan mereka sungguh luar biasa! Harga yang mereka tawarkan juga cukup terjangkau untuk kualitas layanan yang mereka berikan. Saya tidak ragu untuk merekomendasikan MadService kepada teman dan rekan kerja saya.',
+          likes: 0,
+          replies: [],
+        },
+      ],
+    },
+    {
+      user: 'Arjuna',
+      date: '10 Mei 2024',
+      comment:
+        'Hei, guys. AC di rumahku nggak dingin sama sekali, padahal baru aja diservis tiga bulan lalu. Ada yang pernah ngalamin kayak gini?',
+      likes: 5,
+      replies: [],
+    },
+  ]
+  export default {reviews, cards, serviceData, item, articles, comments}
