@@ -9,6 +9,7 @@ import Blog from "./pages/user/pages/Blog"
 import Contact from "./pages/user/pages/Contact"
 import NotFound from "./pages/notfound"
 import Profiles from "./pages/user/pages/Profile"
+import Admin from "./pages/seller"
 
 function App() {
    return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/forum" element={<Forum/>}/>
           <Route path="/blog" element={<Blog/>}/>
           <Route path="/contact" element={<Contact/>}/>
+          <Route path="/admin" element={<Admin/>}/>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

@@ -31,7 +31,6 @@ function Profiles() {
                     </div>
                 </div>
                 <div className="flex-1 flex items-center justify-center p-8">
-                    {/* disni children */}
                     {activePage === 'dataDiri' && <DataDiri />}
                     {activePage === 'pesananService' && <div>Belum ada pesanan</div>}
                     <Transition appear show={isOpen}>
