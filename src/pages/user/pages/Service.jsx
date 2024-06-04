@@ -17,9 +17,10 @@ export default Service
 
 function Service() {
     return(
-        <>
+        <div className="flex flex-col min-h-screen">
         <Navbar links={dataglobal.links}/>
         <Heros title='Our Services' subtitle='Hubungi Kami | Pesan layanan' imagebg={imagebg}/>
+        <section className="mb-auto">
         <div className="container mx-auto flex">
             <SideBar/>
             <div className="flex-1 p-8">
@@ -66,7 +67,8 @@ function Service() {
           <InputTextWithPopup/>
         </div>
         </div>
+        </section>
         <Footer/>
-        </>
+        </div>
     )
 }

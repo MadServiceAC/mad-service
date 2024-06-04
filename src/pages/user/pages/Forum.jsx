@@ -9,10 +9,10 @@ import CommentInputHandler from "../components/CommentInputHandler"
 
 function Forum() {
     return(
-        <>
+        <div className="flex flex-col min-h-screen">
         <Navbar links={dataglobal.links}/>
         <Heros title="Forum" subtitle="Bergabung Sekarang | Ajukan Pertanyaan" imagebg={imagebg} className="text-white" />
-        <section className="my-16">
+        <section className="py-16 mb-auto">
             <div className="max-w-screen-xl mx-auto">
                 <div className="font-semibold border-s-4 border-blue-500 p-4 bg-sky-200 text-md text-gray-900 lg:my-4">
                       <h3 className="ps-6">Forum Diskusi</h3>
@@ -22,7 +22,7 @@ function Forum() {
             </div>
         </section>
         <Footer/>
-        </>
+        </div>
     )
 }
 export default Forum

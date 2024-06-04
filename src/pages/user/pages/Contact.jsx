@@ -8,10 +8,10 @@ import { Footer, Iframe, Input } from "../../../components"
 
 function Contact() {
     return(
-        <>
+        <div className="flex flex-col min-h-screen">
         <Navbar links={dataglobal.links}/>
         <Heros title="Contact Us" subtitle="Hubungi Kami | Kirim Email | Kunjungi Lokasi" imagebg={imagebg}/>
-        <section className="my-16">
+        <section className="py-16 mb-auto">
             <div className="max-w-screen-xl mx-auto">
                 <div className="flex gap-4 justify-center">
                     <Cardcon 
@@ -119,7 +119,7 @@ function Contact() {
             </div>
         </section>
         <Footer/>
-        </>
+        </div>
     )
 }
 export default Contact

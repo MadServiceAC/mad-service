@@ -22,10 +22,10 @@ function Shop() {
     }
 
     return(
-        <>
+        <div className="flex flex-col min-h-screen">
         <Navbar links={dataglobal.links}/>
         <Heros title="Collection" subtitle="Lihat Katalog | Belanja Online" imagebg={imagebg}/>
-        <section className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8 flex flex-col lg:flex-row">
+        <section className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8 flex flex-col lg:flex-row mb-auto">
             <div className="hidden lg:block top-[3.8125rem] shrink-0 left-[max(0px,calc(50%-45rem))] right-auto w-[19rem] pb-10 pl-8 pr-6">
                 <nav className="text-sm py-12 flex flex-col gap-y-4">
                     <div className="border-s-4 border-blue-500 bg-sky-200 font-bold mb-2">
@@ -159,7 +159,7 @@ function Shop() {
             </div>
         </section>
         <Footer/>
-        </>
+        </div>
     )
 }
 export default Shop

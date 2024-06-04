@@ -14,9 +14,9 @@ function Profiles() {
 
 
     return(
-        <>
+        <div className="flex flex-col min-h-screen">
         <Navbar links={dataglobal.links}/>
-         <section className="pt-20 mx-auto max-w-8xl">
+         <section className="pt-20 max-w-8xl mb-auto">
             <div className="flex mx-auto">
                 <div className="w-64 ms-12 my-8">
                     {/* disni link nav */}
@@ -63,7 +63,7 @@ function Profiles() {
             </div>
          </section>
          <Footer/>
-        </>
+        </div>
     )
 }
 
