@@ -8,12 +8,14 @@ import Forum from "./pages/user/pages/Forum"
 import Blog from "./pages/user/pages/Blog"
 import Contact from "./pages/user/pages/Contact"
 import NotFound from "./pages/notfound"
+import Profiles from "./pages/user/pages/Profile"
 
 function App() {
    return (
       <div className="App">
          <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profiles />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/service" element={<Service/>} />

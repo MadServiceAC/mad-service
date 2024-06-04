@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React from "react"
 import Navbar from "../components/Navbar"
 import dataglobal from "../../dataglobal"
 import imagebg from "../../../assets/images/shopbg.png"
@@ -12,7 +12,7 @@ import minidata from "../minidata"
 
 
 function Shop() {
-    const [selectedItem, setSelectedItem] = useState(null)
+    const [selectedItem, setSelectedItem] = React.useState(null)
 
     const handleCardClick = (item) => {
         setSelectedItem(item)

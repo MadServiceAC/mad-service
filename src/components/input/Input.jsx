@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Input = ({ type, styleType, options, placeholder, ...props }) => {
-  let inputElement;
+  let inputElement
 
   switch (styleType) {
     case 'default':

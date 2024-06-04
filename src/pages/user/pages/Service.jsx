@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React from "react"
 import dataglobal from '../../dataglobal'
 import minidata from '../minidata'
 import Navbar from '../components/Navbar'
