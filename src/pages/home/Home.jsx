@@ -16,7 +16,7 @@ function Home() {
       <Hero/>
       <Sponsor/>
       <Sections useBackgroundImage={false} className="mx-auto container mt-16 lg:grid lg:grid-cols-2 gap-16 font-medium p-10">
-        <div className='justify-center hidden lg:flex'>
+        <div className='justify-center hidden lg:flex' name="about">
           <img src={s1img} alt='servis ac' className='w-96'/>
         </div>
         <div className='flex flex-col'>
@@ -43,7 +43,7 @@ function Home() {
         </div>
       </Sections>
       <Sections useBackgroundImage={true} backgroundImage={section2} className='bg-cover font-medium text-center pb-28'>
-        <div className='flex justify-center pt-10'>
+        <div className='flex justify-center pt-10' name="service">
           <div className='flex items-center h-fit my-4'>
             <span className='w-8 inline-block bg-white h-px mr-2'></span>
             <h3 className="text-white">Our Service</h3>
@@ -53,7 +53,7 @@ function Home() {
         <GridContainer items={minidata.item}/>
       </Sections>
       <Sections useBackgroundImage={false} className='font-medium text-center pb-28'>
-      <div className='flex justify-center pt-12'>
+      <div className='flex justify-center pt-12' name="shop">
           <div className='flex items-center h-fit my-4'>
             <span className='w-8 inline-block bg-blue-800 h-px mr-2'></span>
             <h3 className="text-blue-800">Our Service</h3>
@@ -65,7 +65,7 @@ function Home() {
         </div>
       </Sections>
       <Sections useBackgroundImage={true} backgroundImage={section3} className='bg-cover mx-auto lg:grid lg:grid-cols-2 gap-16 font-medium text-white p-10'>
-        <div className='flex flex-col px-12 py-4'>
+        <div className='flex flex-col px-12 py-4' name="contact">
             <h1 className="text-3xl font-bold">We are here to help you. If you have any questions, let us know!</h1>
             <div className='grid grid-cols-1 gap-4 mt-12 text-black font-normal'>
             <Input styleType="default" placeholder="Naame" />
