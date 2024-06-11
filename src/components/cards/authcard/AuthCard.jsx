@@ -1,20 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import authleft from '../../../assets/images/auth-left.png';
 import Input from '../../../components/input/Input';
-import logo from '../../../assets/images/logo.png'
+import logo from '../../../assets/images/logo.png';
 
 const AuthCard = ({ isRegister }) => {
   const navigate = useNavigate();
+  const [formData, setFormData] = useState({ fullname: '', email: '', password: '' });
+  const [error, setError] = useState(null);
+
+  const handleChange = (e) => setFormData({ ...formData, [e.target.id]: e.target.value });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError(null);
+
+    try {
+      const endpoint = isRegister ? 'register' : 'login';
+      const data = isRegister ? { ...formData, role: 'user' } : formData;
+      const response = await axios.post(`http://localhost:3000/${endpoint}`, data);
+
+      if (isRegister) {
+        navigate('/login');
+      } else {
+        localStorage.setItem('token', response.data.token);
+        localStorage.setItem('role', response.data.role);
+        navigate(response.data.role === 'admin' ? '/admin' : '/');
+      }
+    } catch (err) {
+      console.error('Request Error:', err);
+      setError(err.response?.data?.message || 'Server error occurred.'); 
+    }
+  };
 
   return (
     <div className="bg-white shadow-md rounded-2xl md:grid grid-cols-2 w-1/2 mx-auto">
-      <div className="-p-6 hidden lg:block">
+      {/* Left Image Section (same as before) */}
+      <div className="-p-6 hidden lg:block"> 
         <img src={authleft} alt="auth banner" className="w-72 rounded-tl-2xl rounded-bl-2xl" />
       </div>
+
+      {/* Right Form Section */}
       <div className="lg:-ml-12 p-6">
-      <div className='flex justify-between mb-6'>
-      <button
+        <div className='flex justify-between mb-6'>
+        <button
           onClick={() => navigate('/')}
           className="text-blue-600 hover:underline"
         >
@@ -23,75 +53,39 @@ const AuthCard = ({ isRegister }) => {
           </svg>
         </button>
         <img src={logo} alt='madservice' className='w-36'/>
-      </div>
-        {isRegister? (
-        <h2 className="text-2xl font-bold mb-6">
-          Create Account
-        </h2>
+        </div>
+
+        {/* Heading and Description */}
+        {isRegister ? (
+          <h2 className="text-2xl font-bold mb-6">Create Account</h2>
         ) : (
           <>
-          <h2 className='text-2xl font-bold'>
-            Welcome
-          </h2>
-          <p className='mb-6'>
-            Login to your account to continue
-          </p>
+            <h2 className="text-2xl font-bold">Welcome</h2>
+            <p className="mb-6">Login to your account to continue</p>
           </>
         )}
-        
-        <div>
-          {isRegister ? (
-            <>
-              <Input
-                type="text"
-                id="floating_fullname"
-                styleType="floating-label"
-                placeholder="Full Name"
-                required
-              />
-              <Input
-                type="email"
-                id="floating_email"
-                styleType="floating-label"
-                placeholder="Email address"
-                required
-              />
-              <Input
-                type="password"
-                id="floating_password"
-                styleType="floating-label"
-                placeholder="Password"
-                required
-              />
-            </>
-          ) : (
-            <>
-              <Input
-                type="email"
-                id="floating_email"
-                styleType="floating-label"
-                placeholder="Email address"
-                required
-              />
-              <Input
-                type="password"
-                id="floating_password"
-                styleType="floating-label"
-                placeholder="Password"
-                required
-              />
-            </>
+
+        <form onSubmit={handleSubmit}>
+          {/* Input Fields - Conditional Rendering */}
+          {isRegister && (
+            <Input type="text" id="fullname" styleType="floating-label" placeholder="Full Name" value={formData.fullname} onChange={handleChange} required />
           )}
+          <Input type="email" id="email" styleType="floating-label" placeholder="Email address" value={formData.email} onChange={handleChange} required />
+          <Input type="password" id="password" styleType="floating-label" placeholder="Password" value={formData.password} onChange={handleChange} required />
+
+          {/* Error Message */}
+          {error && <p className="text-red-500 mt-2">{error}</p>}
+
+          {/* Submit Button */}
           <button className="hover:bg-cyan-800 bg-blue-600 text-white py-2 px-4 rounded-md shadow-md w-full mt-4">
             {isRegister ? 'Create Account' : 'Log In'}
           </button>
-        </div>
+        </form>
+
+        {/* Toggle Link */}
         <p className="mt-4 text-center">
           {isRegister ? 'Already have an account?' : "Don't have an account?"}
-          <button
-            onClick={() => navigate(isRegister ? '/login' : '/register')}
-            className="text-blue-600 hover:underline ml-1"
-          >
+          <button onClick={() => navigate(isRegister ? '/login' : '/register')} className="text-blue-600 hover:underline ml-1">
             {isRegister ? 'Log In' : 'Sign Up'}
           </button>
         </p>

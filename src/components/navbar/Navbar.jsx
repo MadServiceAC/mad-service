@@ -1,6 +1,6 @@
-import React from "react";
-import logo from "../../assets/images/logo.png";
-import { Link, animateScroll as scroll} from "react-scroll";
+import React from "react"
+import logo from "../../assets/images/logo.png"
+import { Link, animateScroll as scroll} from "react-scroll"
 
 const Navbar = () => {
   const scrollToTop = () => {
@@ -11,7 +11,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="bg-gray-100 flex justify-between w-full fixed items-center py-4 px-8 rounded-b-2xl shadow-md z-10" name="top">
+    <nav className="bg-gray-100 flex justify-between w-full fixed items-center py-4 px-8 rounded-b-2xl shadow-md z-10">
       <a className="flex items-center">
         <img src={logo} className="h-10" alt="Mad service" />
       </a>
@@ -33,7 +33,7 @@ const Navbar = () => {
         </Link>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

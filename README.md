@@ -1,8 +1,28 @@
-# React + Vite
+# React + Vite + vite-express
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+step:
+1. clone repo
+```bash
+git clone https://github.com/MadServiceAC/mad-service.git
+```
+2. change dir
+```bash
+cd mad-service
+```
+3. install dependencies
+```bash
+npm i
+```
+4. install mysql-community server
+5. add database named madservice
+6. run server
+```bash
+node backend/server.js
+```
 
-Currently, two official plugins are available:
+## no need to run frontend
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### wanna test db?
+```bash
+node backend/test.js
+```
