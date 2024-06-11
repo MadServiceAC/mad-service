@@ -1,13 +1,15 @@
 import db from '../lib/db.js';
+import {createItemsTable} from '../utils/utils.js';
 
 class Item {
   static async findAll() {
     try {
+      await createItemsTable(); 
       const [rows] = await db.promise().query('SELECT * FROM items');
       return rows;
     } catch (error) {
       console.error('Error fetching all items:', error);
-      throw error; // Melempar error agar bisa ditangani di tempat lain
+      throw error;
     }
   }
 

@@ -1,15 +1,17 @@
 import db from '../lib/db.js'
+import {createUsersTable} from '../utils/utils.js'
 
 class User {
     static async allUser() {
         try {
-            const [rows] = await db.promise().query('SELECT * FROM users');
-            return rows;
+          await createUsersTable();
+          const [rows] = await db.promise().query('SELECT * FROM users');
+          return rows;
         } catch (error) {
-            console.error('error fetching all users', error);
-            throw error;
+          console.error('error fetching all users', error);
+          throw error; 
         }
-    }
+      }
     static async findById(id) {
         try {
             const [rows] = await db.promise().query('SELECT * FROM users WHERE id = ?', [id]);
