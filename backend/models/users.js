@@ -5,7 +5,7 @@ class User {
     static async allUser() {
         try {
           await createUsersTable();
-          const [rows] = await db.promise().query('SELECT * FROM users');
+          const [rows] = await db.query('SELECT * FROM users');
           return rows;
         } catch (error) {
           console.error('error fetching all users', error);
@@ -14,7 +14,7 @@ class User {
       }
     static async findById(id) {
         try {
-            const [rows] = await db.promise().query('SELECT * FROM users WHERE id = ?', [id]);
+            const [rows] = await db.query('SELECT * FROM users WHERE id = ?', [id]);
             return rows[0];
         } catch (error) {
             console.error('error get user', error);
@@ -23,7 +23,7 @@ class User {
     }
     static async findByEmail(email) {
         try {
-            const [rows] = await db.promise().query('SELECT * FROM users WHERE email = ?', [email]);
+            const [rows] = await db.query('SELECT * FROM users WHERE email = ?', [email]);
             return rows[0];
         } catch (error) {
             console.error('where is email?', error);
@@ -33,7 +33,7 @@ class User {
     static async create(user) {
         try {
             const { fullname, email, password, role } = user;
-            const [results] = await db.promise().query('INSERT INTO users (fullname, email, password, role) VALUES (?, ?, ?, ?)', [fullname, email, password, role]);
+            const [results] = await db.query('INSERT INTO users (fullname, email, password, role) VALUES (?, ?, ?, ?)', [fullname, email, password, role]);
             return results.insertId;
         } catch (error) {
             console.error('error create user', error);
@@ -43,7 +43,7 @@ class User {
     static async update(id, user) {
         try {
             const { fullname, email, password, role } = user;
-            const [results] = await db.promise().query('UPDATE users SET fullname = ?, email = ?, password = ?, role = ? WHERE id = ?', [fullname, email, password, role, id]);
+            const [results] = await db.query('UPDATE users SET fullname = ?, email = ?, password = ?, role = ? WHERE id = ?', [fullname, email, password, role, id]);
             return results.affectedRows;
         } catch (error) {
             console.error('error update user', error);
@@ -52,7 +52,7 @@ class User {
     }
     static async delete(id) {
         try {
-            const [results] = await db.promise().query('DELETE FROM users WHERE id = ?', [id]);
+            const [results] = await db.query('DELETE FROM users WHERE id = ?', [id]);
             return results.affectedRows;
         } catch (error) {
             console.error('error delete user', error);
