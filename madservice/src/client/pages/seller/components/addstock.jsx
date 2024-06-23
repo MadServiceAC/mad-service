@@ -1,13 +1,13 @@
 import React from "react"
 import productsSvc from "../../../svc/products.svc"
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
-import { Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from '@headlessui/react';
+import { Formik, Form, Field, ErrorMessage } from 'formik'
+import * as Yup from 'yup'
+import { Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from '@headlessui/react'
 
 const AddStock = ({isOpenAddStock, setIsOpenAddStock, productId, onupdatedStock}) => {
     const validationSchema = Yup.object().shape({
         stock: Yup.number().required('Stock is required').positive('Stock must be positive'),
-      });
+      })
 
     const addStock = async (values) => {
         try {

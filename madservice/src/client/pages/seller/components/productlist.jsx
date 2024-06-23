@@ -2,18 +2,28 @@ import React from 'react'
 import PopUp from './popup'
 import ProductDataService from '../../../svc/products.svc'
 import AddStock from './addstock'
-
+import AddPicturePopup from './addpicture'
 
 const ProductList = () => {
+  const [addPictureOpen, setAddPictureOpen] = React.useState(false)
   const [products, setProducts] = React.useState([])
   const [isOpen, setIsOpen] = React.useState(false)
   const [isOpenAddStock, setIsOpenAddStock] = React.useState(false)
   const [selectedProductId, setSelectedProductId] = React.useState(null)
   const [selectedProductToAddStock, setSelectedProductToAddStock] = React.useState(null)
+  const [selectedId, setSelectedId] = React.useState(null)
 
   const handleDeleteProduct = (productId) => {
     setSelectedProductId(productId)
     setIsOpen(true)
+  }
+
+  const handleAfterAddPicture = () => {
+    ProductDataService.getAllProducts()
+    .then(response => setProducts(response.data))
+    .catch(error => console.error('Error mengambil produk setelah menambahkan gambar', error))
+
+    setAddPictureOpen(false)
   }
 
   const handleAfterDelete = () => {
@@ -54,6 +64,12 @@ const ProductList = () => {
       productId={selectedProductId} 
       onProductDeleted={handleAfterDelete} 
     />
+    <AddPicturePopup
+        addPictureOpen={addPictureOpen}
+        setAddPictureOpen={setAddPictureOpen}
+        id={selectedId}
+        onPictureAdded={handleAfterAddPicture}
+      />
     <AddStock isOpenAddStock={isOpenAddStock} setIsOpenAddStock={setIsOpenAddStock} productId={selectedProductToAddStock} onupdatedStock={handleAfterAddStock} />
     <div className="flex flex-col mt-8">
       {products.map((product) => (
@@ -64,12 +80,16 @@ const ProductList = () => {
             <p className="text-blue-500">Rp {product.price}</p>
             <p className='text-gray-900 font-semibold text-sm'>Stock: {product.stock}</p>
             <div className="flex justify-end px-8 gap-x-4 my-2">
-              <button onClick={() => {setSelectedProductToAddStock(product.id);setIsOpenAddStock(true)}} className="bg-green-500 text-white py-2 px-4 rounded-md shadow-md">
+            <button onClick={() => {setSelectedId(product.id);setAddPictureOpen(true)}} className='bg-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:bg-blue-800 flex justify-center items-center gap-x-2'>
+              Ganti gambar
+              <svg xmlns="http://www.w3.org/2000/svg" fill='currentColor' strokeWidth={1.5} className="size-4" viewBox="0 0 24 24" id="sync"><g><path d="M21.66 10.37a.62.62 0 0 0 .07-.19l.75-4a1 1 0 0 0-2-.36l-.37 2a9.22 9.22 0 0 0-16.58.84 1 1 0 0 0 .55 1.3 1 1 0 0 0 1.31-.55A7.08 7.08 0 0 1 12.07 5a7.17 7.17 0 0 1 6.24 3.58l-1.65-.27a1 1 0 1 0-.32 2l4.25.71h.16a.93.93 0 0 0 .34-.06.33.33 0 0 0 .1-.06.78.78 0 0 0 .2-.11l.08-.1a1.07 1.07 0 0 0 .14-.16.58.58 0 0 0 .05-.16zm-1.78 3.7a1 1 0 0 0-1.31.56A7.08 7.08 0 0 1 11.93 19a7.17 7.17 0 0 1-6.24-3.58l1.65.27h.16a1 1 0 0 0 .16-2L3.41 13a.91.91 0 0 0-.33 0H3a1.15 1.15 0 0 0-.32.14 1 1 0 0 0-.18.18l-.09.1a.84.84 0 0 0-.07.19.44.44 0 0 0-.07.17l-.75 4a1 1 0 0 0 .8 1.22h.18a1 1 0 0 0 1-.82l.37-2a9.22 9.22 0 0 0 16.58-.83 1 1 0 0 0-.57-1.28z"></path></g></svg>
+            </button>
+              <button onClick={() => {setSelectedProductToAddStock(product.id);setIsOpenAddStock(true)}} className="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded-md shadow-md">
                 Tambahkan stock
               </button>
               <button
                 onClick={() => handleDeleteProduct(product.id)}
-                className="bg-red-500 text-white p-2 rounded-md shadow-md"
+                className="bg-red-500 hover:bg-red-700 text-white px-3 py-2 rounded-md shadow-md"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

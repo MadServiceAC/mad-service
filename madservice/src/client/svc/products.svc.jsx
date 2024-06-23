@@ -37,7 +37,7 @@ class ProductDataService {
     }
     async uploadProduct(id, data) {
         try {
-            await axios.put(`http://localhost:3000/api/products/${id}/upload`, data, {headers: authHeader()})
+            await axios.post(`http://localhost:3000/api/products/${id}/upload`, data, {headers: authHeader()})
             return "Upload sukses"
         } catch (e) {
             console.error("Error upload gambar:", e)
